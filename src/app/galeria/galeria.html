@@ -1,0 +1,14 @@
+<div class="container mt-3">
+  <div class="row">
+    <div *ngFor="let foto of fotosFiltradas" class="col-6 col-md-5 col-lg-3 mb-3">
+      <app-foto [foto]="foto" (fotoClick)="abrirLightbox($event)"></app-foto>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" *ngIf="lightboxAbierto" (click)="cerrarLightbox()">
+  <span class="cerrar">&times;</span>
+  <img class="lightbox-img" [src]="fotoSeleccionada?.URL" [alt]="fotoSeleccionada?.descripcion">
+  <div class="descripcion">{{fotoSeleccionada?.descripcion}}</div>
+</div>

@@ -1,0 +1,13 @@
+<div class="foto-card" (click)="onClick()">
+  <img [src]="foto.URL" class="card-img-top" [alt]="foto.descripcion">    
+  <div class="card-body">
+    <div class="overlay">
+      <h5 class="overlay-title">{{ foto.descripcion }}</h5>
+      <p class="overlay-date">{{ foto.fechaRegistro }}</p>
+       <a [href]="foto.URL" download="{{ foto.URL }}" class="download-btn">
+    <span class="download-icon">⬇ Descargar</span>
+  </a>
+    </div>
+  </div>
+</div>
+

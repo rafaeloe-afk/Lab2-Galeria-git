@@ -1,0 +1,26 @@
+.header {
+  background-color: var(--color-principal);
+  color: var(--color-texto);
+  border-radius: 0 0 12px 12px;
+  margin-bottom: 20px;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.sub-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--color-secundario);
+}
+
+.container {
+  max-width: 95%;      /* Más ancho que el container normal */
+  margin-left: auto;     /* Desplaza todo el container hacia la derecha */
+  margin-right: auto;     /* Ajusta margen derecho */
+  padding-left: 0;     /* Opcional: quita padding interno */
+  padding-right: 0;
+}

@@ -1,0 +1,47 @@
+<nav class="navbar d-flex justify-content-center my-3 flex-wrap">
+  <!-- Dropdown solo visible en pantallas pequeñas -->
+  <div class="d-lg-none dropdown me-2">
+    <button
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      id="dropdownCategorias"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      Categorías
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownCategorias">
+      <li *ngFor="let cat of categorias">
+        <a class="dropdown-item" (click)="seleccionarCategoria(cat.id)">{{ cat.descripcion }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Botones normales, visibles en pantallas grandes -->
+  <div class="d-none d-lg-flex flex-wrap justify-content-center">
+    <button
+      *ngFor="let cat of categorias"
+      (click)="seleccionarCategoria(cat.id)"
+      [class.active]="cat.id === categoriaActual"
+      class="nav-btn mx-1 mb-1"
+    >
+      {{ cat.descripcion }}
+    </button>
+  </div>
+</nav>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Galería</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li *ngFor="let cat of categorias" class="nav-item">
+          <a class="nav-link" href="#" (click)="seleccionarCategoria(cat.id)">{{cat.descripcion}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> -->

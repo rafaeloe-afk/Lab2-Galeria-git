@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-principal: #1E3A8A;
+  --color-secundario: #60A5FA;
+  --color-texto: #FFFFFF;
+}
+body {
+  padding: 20px 40px; /* 20px arriba/abajo, 40px izquierda/derecha */
+  background-color: #f8f9fa; /* Opcional: color de fondo suave */
+}
+.container {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.header {
+  margin-bottom: 40px; /* Más espacio debajo del header */
+  padding-top: 30px;   /* Más espacio arriba */
+  padding-bottom: 30px;/* Más espacio abajo */
+}

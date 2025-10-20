@@ -1,0 +1,87 @@
+.foto-card {
+  position: relative;
+  width: 100%;
+  height: 300px;           /* Altura uniforme */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.75s ease;
+}
+
+.foto-card:hover .card-img-top {
+  transform: scale(1.2);  /* Zoom solo de la imagen */
+}
+
+/* Botón de descarga */
+.download-btn {
+  position: absolute;
+  bottom: 10px;            /* Empezamos desde abajo */
+  right: 10px;
+  background: rgba(255,255,255,0.2);
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 50px;
+  padding: 6px 14px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  
+  /* Oculto por defecto */
+  opacity: 0;
+  transform: translateY(20px); /* Desplazado hacia abajo al inicio */
+  transition: opacity 0.4s ease, transform 0.4s ease, background 0.3s ease;
+}
+
+.download-btn:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+/* Mostrar botón al pasar el ratón */
+.foto-card:hover .download-btn {
+  opacity: 1;
+  transform: translateY(0);  /* Se mueve a su posición */
+}
+
+/* Overlay de información */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+
+  /* Oculto por defecto */
+  opacity: 0;
+  transform: translateY(20px); /* Desplazado hacia abajo al inicio */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Mostrar overlay al pasar el ratón */
+.foto-card:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);   /* Se mueve a su posición */
+}
+
+.overlay-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.overlay-date {
+  margin: 0;
+  font-size: 0.85rem;
+}

@@ -1,0 +1,71 @@
+
+ .container {
+  max-width: 95%;      /* Más ancho que el container normal */
+  margin-left: auto;     /* Desplaza todo el container hacia la derecha */
+  margin-right: auto;     /* Ajusta margen derecho */
+  padding-left: 0;     /* Opcional: quita padding interno */
+  padding-right: 0;
+} 
+
+.galeria-container {
+  display: flex;
+  gap: 1rem;           /* espacio entre columnas */
+  justify-content: center;
+}
+
+.galeria-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;           /* espacio entre fotos */
+  flex: 1;             /* columnas de ancho igual */
+}
+
+.foto-card img {
+  width: 100%;
+  height: auto;        /* mantiene proporción original */
+  display: block;
+  border-radius: 10px;
+}
+
+/* Lightbox fondo oscuro */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+/* Imagen ampliada */
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  object-fit: contain; /* Mantiene proporción original */
+}
+
+/* Descripción debajo de la imagen */
+.descripcion {
+  color: white;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* Botón de cerrar */
+.cerrar {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+}
