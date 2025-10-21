@@ -13,7 +13,7 @@ export class DatosService {
   constructor(private http: HttpClient) {} // Inyección sigue igual
 
   obtenerCategorias(): Observable<categoria[]> {
-    return this.http.get<categoria[]>('../assets/categorias.json');
+    return this.http.get<categoria[]>('assets/categorias.json');
   }
 
   obtenerFotos(): Observable<Foto[]> {

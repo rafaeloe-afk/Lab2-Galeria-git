@@ -26,7 +26,7 @@ export class Galeria implements OnInit {
   ngOnInit(): void {
     this.datosService.obtenerFotos().subscribe(f => this.fotos = f);
     this.datosService.obtenerRelaciones().subscribe(r => this.relaciones = r);
-    this.filtrarPorCategoria(this.categoriaActual);
+    this.filtrarPorCategoria(0);
   }
 
   filtrarPorCategoria(id: number): void {

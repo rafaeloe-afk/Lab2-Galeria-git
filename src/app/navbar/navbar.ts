@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DatosService } from '../servicios/datos.service';
 import { categoria } from '../modelos/categoria';
@@ -12,19 +12,28 @@ import { categoria } from '../modelos/categoria';
 })
 export class NavbarComponent implements OnInit {
   categorias: categoria[] = [];
-  categoriaActual: number | null = 0;
+  categoriaActual: number = 0;
   @Output() categoriaSeleccionada = new EventEmitter<number>();
 
-  constructor(private datosService: DatosService) {}
+  constructor(private datosService: DatosService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    this.datosService.obtenerCategorias().subscribe(data => {
-      this.categorias = data;
-    });
+    this.datosService.obtenerCategorias().subscribe({
+    next: (data) => {
+      this.categorias = data;      
+      this.cdr.detectChanges(); 
+      this.categoriaSeleccionada.emit(0);
+    },
+    error: (err) => {
+      console.error('Error cargando categorias.json:', err);
+    }
+  });
+
+   
   }
 
   seleccionarCategoria(id: number): void {
     this.categoriaActual = id;
-    this.categoriaSeleccionada.emit(id);
+    this.categoriaSeleccionada.emit(id); 
   }
 }

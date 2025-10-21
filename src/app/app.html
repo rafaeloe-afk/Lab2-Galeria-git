@@ -1,9 +1,11 @@
 
 <div class="container mt-4">
   <section class="header text-center py-3">
-    <h1 class="main-title">Galería Multimedia</h1>
+    <h1 class="main-title">Galería de Fotos</h1>
     <p class="sub-title">Actividad 2. Creación de Galería de Imágenes</p>
   </section>  
-  <navbar (categoriaSeleccionada)="galeria.filtrarPorCategoria($event)"></navbar>    
+  
+  <navbar (categoriaSeleccionada)="galeria.filtrarPorCategoria($event)"></navbar>
   <app-galeria #galeria></app-galeria>
 </div>
+ 
